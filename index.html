@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -10,107 +11,246 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #000000, #1a1a1a);
-    color:white;
-    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
+    color:#fff;
 }
 
 header{
-    background:#8B0000;
-    padding:30px;
-    box-shadow:0 0 20px red;
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-h1{
-    font-size:3em;
+header h1{
+    font-size:4rem;
+    color:#d62828;
+    text-shadow:0 0 20px #d62828;
 }
 
-p{
-    margin:20px;
-    line-height:1.6;
+header p{
+    font-size:1.3rem;
+    max-width:800px;
+    margin-top:20px;
+}
+
+nav{
+    position:sticky;
+    top:0;
+    background:#111;
+    padding:15px;
+    text-align:center;
+    z-index:100;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d62828;
+}
+
+section{
+    padding:70px 10%;
+}
+
+h2{
+    color:#d62828;
+    margin-bottom:20px;
+    border-left:5px solid #d62828;
+    padding-left:10px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:10px;
+    margin-top:20px;
+    box-shadow:0 0 15px rgba(214,40,40,.4);
 }
 
 .galeria{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    margin:30px;
 }
 
 .galeria img{
-    width:300px;
-    height:400px;
+    width:100%;
+    height:350px;
     object-fit:cover;
-    border:3px solid #8B0000;
     border-radius:10px;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .galeria img:hover{
     transform:scale(1.05);
-    box-shadow:0 0 20px red;
-}
-
-.card{
-    max-width:900px;
-    margin:auto;
-    padding:20px;
 }
 
 footer{
+    text-align:center;
+    padding:30px;
     background:#111;
-    padding:20px;
-    margin-top:40px;
+    margin-top:50px;
+}
+
+.destaque{
+    color:#fcbf49;
+    font-weight:bold;
 }
 </style>
+
 </head>
 <body>
 
-<header>
-    <h1>Dean Winchester</h1>
-    <h2>Supernatural</h2>
-</header>
+<!-- Música -->
 
-<div class="card">
-    <p>
-        Dean Winchester é um dos protagonistas da série Supernatural.
-        Caçador de criaturas sobrenaturais, conhecido por seu humor,
-        coragem, amor por carros clássicos e dedicação à família.
-    </p>
-</div>
-
-<section class="galeria">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Jensen_Ackles_2019.jpg/800px-Jensen_Ackles_2019.jpg" alt="Dean Winchester">
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Jensen_Ackles_2013.jpg/800px-Jensen_Ackles_2013.jpg" alt="Dean Winchester">
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Jensen_Ackles.jpg/800px-Jensen_Ackles.jpg" alt="Dean Winchester">
-</section>
-
-<h2>O Famoso Impala 1967</h2>
-
-<img
-src="https://upload.wikimedia.org/wikipedia/commons/3/31/1967_Chevrolet_Impala.jpg"
-width="700"
-style="border-radius:10px; border:3px solid #8B0000;"
->
-
-<br><br>
-
-<h2>Trilha Sonora</h2>
-
-<audio controls autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
+<audio autoplay loop controls>
+    <!-- Troque pelo seu arquivo -->
+    <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
+<header>
+    <h1>DEAN WINCHESTER</h1>
+    <p>
+        Caçador, herói, irmão e uma das figuras mais marcantes
+        do universo Supernatural.
+    </p>
+</header>
+
+<nav>
+    <a href="#historia">História</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#impala">Impala</a>
+    <a href="#galeria">Galeria</a>
+</nav>
+
+<section id="historia">
+    <h2>Quem é Dean Winchester?</h2>
+
+```
+<div class="card">
+    <p>
+        Dean Winchester é um caçador de criaturas sobrenaturais.
+        Desde criança, ele e seu irmão Sam viajaram pelos Estados Unidos
+        enfrentando demônios, fantasmas, vampiros, anjos e inúmeras
+        ameaças sobrenaturais.
+
+        Após a morte de sua mãe, Mary Winchester, sua vida mudou
+        completamente e ele passou a ser treinado por seu pai,
+        John Winchester, para combater o mal.
+    </p>
+</div>
+```
+
+</section>
+
+<section>
+    <h2>Momentos Marcantes</h2>
+
+```
+<div class="card">
+    <ul>
+        <li>Protegeu Sam durante toda a vida.</li>
+        <li>Fez sacrifícios para salvar sua família.</li>
+        <li>Enfrentou demônios e o próprio inferno.</li>
+        <li>Trabalhou ao lado de Castiel.</li>
+        <li>Participou da luta contra Lúcifer.</li>
+        <li>Salvou o mundo diversas vezes.</li>
+    </ul>
+</div>
+```
+
+</section>
+
+<section id="curiosidades">
+    <h2>Curiosidades</h2>
+
+```
+<div class="card">
+    <p>
+        ✔ Ama rock clássico.
+    </p>
+
+    <p>
+        ✔ Tem paixão por hambúrgueres e tortas.
+    </p>
+
+    <p>
+        ✔ Seu carro favorito é o lendário
+        <span class="destaque">Chevrolet Impala 1967</span>.
+    </p>
+
+    <p>
+        ✔ É conhecido pelo senso de humor e coragem.
+    </p>
+</div>
+```
+
+</section>
+
+<section id="impala">
+    <h2>O Impala 1967</h2>
+
+```
+<div class="card">
+    <p>
+        O Chevrolet Impala 1967 é praticamente um personagem da série.
+        Dean considera o carro parte da família e ele aparece
+        durante toda a jornada dos irmãos Winchester.
+    </p>
+
+    <br>
+
+    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+    width="100%"
+    style="border-radius:10px;">
+</div>
+```
+
+</section>
+
+<section id="galeria">
+    <h2>Galeria</h2>
+
+```
+<div class="galeria">
+
+    <!-- Substitua pelos links das suas imagens -->
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+
+    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43">
+
+    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1e">
+
+    <img src="https://images.unsplash.com/photo-1504257432389-52343af06ae3">
+
+</div>
+```
+
+</section>
+
 <footer>
-    <p>Site criado para fãs de Dean Winchester ❤️</p>
+    <h3>Dean Winchester Fan Site</h3>
+    <p>
+        Site criado por fã para homenagear um dos personagens mais
+        icônicos de Supernatural.
+    </p>
 </footer>
 
 </body>
